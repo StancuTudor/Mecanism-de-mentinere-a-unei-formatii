@@ -48,7 +48,7 @@ goal = [
 ShowAgents("Pozitia initiala")
 
 # Simulare gradient
-steps = range(200)
+steps = range(1000)
 positions = [[] for a in agents]
 distance_error = [[[0, 0, 0, 0, 0, 0] for a in agents] for s in steps]
 velocity_error = [[[np.array([0,0]), np.array([0,0]), np.array([0,0]), np.array([0,0]), np.array([0,0]), np.array([0,0])] for a in agents] for s in steps]
@@ -71,7 +71,7 @@ for step in steps:
         v = 0
         a = np.array(agents[i][:-1])
         va = np.array(vAgents[i])
-        for j in range(len(agents)):
+        for j in [rand_agent]:
             b = np.array(agents[j][:-1])
             vb = np.array(vAgents[j])
             if goal[i][j] > 0:
